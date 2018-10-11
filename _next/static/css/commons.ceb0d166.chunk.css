@@ -7254,7 +7254,7 @@ html {
     color: #222;
     text-decoration: none; }
     .notes-list .note-item .note-item-title:hover {
-      color: #666; }
+      color: #000; }
     .notes-list .note-item .note-item-title:visited {
       color: #999; }
   .notes-list .note-item .create-time {
