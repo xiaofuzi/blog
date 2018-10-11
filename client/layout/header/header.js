@@ -6,6 +6,9 @@ import { Component } from 'react';
 import Link from 'next/link';
 
 export default class Header extends Component {
+    state = {
+        isActive: ''
+    }
 
     render () {
         return <nav className="navbar is-white" role="navigation" aria-label="main navigation">
@@ -14,11 +17,21 @@ export default class Header extends Component {
                 <a className="navbar-item" href="/">
                   <img style={{ maxHeight: "none" }} src="/static/img/logo.png" width="112" height="28" />
                 </a>
+                <div onClick={() => {this.toggleNavActiveClass(this.state.isActive)}} 
+                    className={'navbar-burger burger ' + this.state.isActive} data-target="navMenuDocumentation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
               </div>
-              <div className="navbar-menu">
+                <div onClick={() => { this.toggleNavActiveClass(this.state.isActive) }} 
+                    className={"navbar-menu " + this.state.isActive}>
                 <div className="navbar-end">
                   <Link href="/">
                     <a className="navbar-item">文章</a>
+                  </Link>
+                  <Link href="/books">
+                    <a className="navbar-item">读书</a>
                   </Link>
                   <Link href='/post/a1770bd3adecb9b5806c/'>
                     <a className="navbar-item">导航</a>
@@ -33,6 +46,18 @@ export default class Header extends Component {
               </div>
             </div>
           </nav>;
+    }
+
+    toggleNavActiveClass = (classState) => {
+        if (classState) {
+            this.setState({
+                isActive: ''
+            });
+        } else {
+            this.setState({
+                isActive: 'is-active'
+            })
+        }
     }
 }
 

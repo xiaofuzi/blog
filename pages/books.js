@@ -6,32 +6,23 @@ import FooterComponent from '../client/layout/footer/footer.js';
 import NotesListComponent from '../client/components/NotesList/NotesList.js';
 
 import { Http } from '../client/utils.js';
-import Config from '../config.js';
 
 export default class HomePage extends Component {
     static async getInitialProps() {
         let res = await Http.get("/notes/notesList");
-        return { notesList: res[Config.noteType.papers].map(
-            (item, index) => {
-              item.newTitle = item.title;
-              let l = res[Config.noteType.papers].length;
-              index = l - index;
-              item.title = "第" + index + "期";
-
-              return item;
-            }
-          ) 
+        return {
+            notesList: res['books']
         };
     }
 
-    render () {
+    render() {
         return <div className="">
             <HeaderComponent />
             <div className="container markdown-body">
-              <h2>Weekly：</h2>
-              <NotesListComponent items={this.props.notesList}/>
+                <h2>读书笔记:</h2>
+                <NotesListComponent items={this.props.notesList} />
             </div>
             <FooterComponent />
-          </div>;
+        </div>;
     }
 } 

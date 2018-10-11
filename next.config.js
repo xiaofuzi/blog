@@ -11,8 +11,9 @@ async function getNotesList () {
 let nextConfigJs = {
   exportPathMap: async function(defaultPathMap) {
     let pages = {
-      "/": { page: "/" },
-      "/papers": { page: "/papers" }
+        "/": { page: "/" },
+        "/papers": { page: "/papers" },
+        "/books": { page: "/books" }
     };
 
     let postPages = {};

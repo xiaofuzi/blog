@@ -1,16 +1,16 @@
 {
-  "name": "youdaoyun-note",
+  "name": "yangxiaofu-blog",
   "version": "0.0.1",
-  "description": "wrap of youdaoyunnote sdk",
+  "description": "the new blog of yangxiaofu!",
   "main": "index.js",
   "author": "yangxiaofu",
   "license": "MIT",
   "scripts": {
     "generate": "NODE_ENV='production' && next build && next export",
-    "generate-dev": "next build && next export",
+    "dev": "next",
     "server": "node ./server/index.js",
     "start": "serve out",
-    "deploy": "touch out/.nojekyll && cp CNAME out/CNAME &&  git add out/ && git commit -m \"update blog\" && git subtree push --prefix out origin gh-pages"
+    "deploy": "yarn generate && touch out/.nojekyll && cp CNAME out/CNAME &&  git add out/ && git commit -m \"update blog\" && git subtree push --prefix out origin gh-pages"
   },
   "dependencies": {
     "@rokt33r/season": "^5.3.1",
@@ -19,6 +19,7 @@
     "bulma": "^0.7.1",
     "dayjs": "^1.7.7",
     "express": "^4.16.3",
+    "highlight.js": "^9.12.0",
     "marked": "^0.5.1",
     "next": "^7.0.1",
     "node-sass": "^4.9.3",
