@@ -26,6 +26,6 @@ let nextConfigJs = {
 
     return Object.assign(pages, postPages);
   },
-  assetPrefix: !debug ? "/Next-gh-page-example/" : ""
+  // assetPrefix: !debug ? "/Next-gh-page-example/" : ""
 };
 module.exports = withSass(nextConfigJs)

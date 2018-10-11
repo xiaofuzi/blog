@@ -9,7 +9,8 @@
     "generate": "NODE_ENV='production' && next build && next export",
     "generate-dev": "next build && next export",
     "server": "node ./server/index.js",
-    "start": "serve out"
+    "start": "serve out",
+    "deploy": "touch out/.nojekyll && cp CNAME out/CNAME &&  git add out/ && git commit -m \"update blog\" && git subtree push --prefix out origin gh-pages"
   },
   "dependencies": {
     "@rokt33r/season": "^5.3.1",
