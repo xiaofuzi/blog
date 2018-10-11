@@ -1,0 +1,28 @@
+{
+  "name": "youdaoyun-note",
+  "version": "0.0.1",
+  "description": "wrap of youdaoyunnote sdk",
+  "main": "index.js",
+  "author": "yangxiaofu",
+  "license": "MIT",
+  "scripts": {
+    "generate": "NODE_ENV='production' && next build && next export",
+    "generate-dev": "next build && next export",
+    "server": "node ./server/index.js",
+    "start": "serve out"
+  },
+  "dependencies": {
+    "@rokt33r/season": "^5.3.1",
+    "@zeit/next-sass": "^1.0.1",
+    "axios": "^0.18.0",
+    "bulma": "^0.7.1",
+    "dayjs": "^1.7.7",
+    "express": "^4.16.3",
+    "marked": "^0.5.1",
+    "next": "^7.0.1",
+    "node-sass": "^4.9.3",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "sander": "^0.6.0"
+  }
+}
