@@ -1,8 +1,20 @@
 // next.config.js
 const withSass = require("@zeit/next-sass");
 const notesApi = require('./lib/notes/index.js');
+const fs = require("fs-extra");
+const Config = require('./config.js');
+const path = require('path');
+
+const _path = Config.storgePath || "/Users/yangxiaofu/Boostnote";
+
 
 const debug = process.env.NODE_ENV !== "production";
+function saveStorge () {
+    fs.emptyDirSync("./storge");
+    fs.copySync(_path, './storge', {
+        overwrite: true
+    });
+}
 
 async function getNotesList () {
     let res = await notesApi.fetchNotes();
@@ -25,6 +37,8 @@ let nextConfigJs = {
       };
     });
 
+    // saveStorge
+    saveStorge();
     return Object.assign(pages, postPages);
   },
   // assetPrefix: !debug ? "/Next-gh-page-example/" : ""

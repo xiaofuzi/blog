@@ -3,7 +3,6 @@ import './header.scss';
 import '../common/markdown.scss';
 
 import { Component } from 'react';
-import Link from 'next/link';
 
 export default class Header extends Component {
     state = {
@@ -27,21 +26,15 @@ export default class Header extends Component {
                 <div onClick={() => { this.toggleNavActiveClass(this.state.isActive) }} 
                     className={"navbar-menu " + this.state.isActive}>
                 <div className="navbar-end">
-                  <Link href="/">
-                    <a className="navbar-item">文章</a>
-                  </Link>
-                  <Link href="/books">
-                    <a className="navbar-item">读书</a>
-                  </Link>
-                  <Link href='/post/a1770bd3adecb9b5806c/'>
-                    <a className="navbar-item">导航</a>
-                  </Link>
-                  <Link href="/papers/">
-                    <a className="navbar-item">周刊</a>
-                  </Link>
-                  <Link href="/post/ee0195143ab8688c92e5/">
-                    <a className="navbar-item">关于</a>
-                  </Link>
+                  <a href="/" className="navbar-item">文章</a>
+                  <a href="/books"
+                     className="navbar-item">读书</a>
+                  <a href='/post/a1770bd3adecb9b5806c/'
+                     className="navbar-item">导航</a>
+                  <a href="/papers/"
+                    className="navbar-item">周刊</a>
+                  <a href="/post/ee0195143ab8688c92e5/"
+                     className="navbar-item">关于</a>
                 </div>
               </div>
             </div>

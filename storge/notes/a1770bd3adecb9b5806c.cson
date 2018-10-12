@@ -1,0 +1,55 @@
+createdAt: "2018-10-10T09:32:50.063Z"
+updatedAt: "2018-10-12T07:16:42.907Z"
+type: "MARKDOWN_NOTE"
+folder: "fba79554f9e6601d04b1"
+title: "Web前端导航"
+content: '''
+  ## Web前端导航
+  
+  ### 开发社区
+  
+  * [掘金](https://juejin.im/) - 中文分享技术社区
+  * [SegmentFault](https://segmentfault.com/) - 专注于解决编程问题，提高开发技能的社区
+  * [V2EX](https://www.v2ex.com/) - 分享与探索
+  * [Smashingmagazine](https://www.smashingmagazine.com/) - web技术类的博客杂志站点
+  * [ruby china](https://ruby-china.org/)
+  * [Hacker News](https://news.ycombinator.com/)
+   
+  * [w3c官网](http://www.w3.org/)
+  * [w3c中国](www.chinaw3c.org)
+  
+  ### 团队组织
+  * [腾讯 AlloyTeam](http://www.alloyteam.com/)
+  * [百度 FEX](http://fex.baidu.com/)
+  * [淘宝 FED](http://taobaofed.org/)
+  * [凹凸实验室](https://aotu.io/)
+  * [奇舞团](https://75team.com/)
+  * [EFE](http://efe.baidu.com/) 
+  * [码农周刊](http://weekly.manong.io/issues/)
+  
+  
+  ### 技术大牛
+  * [javascript之父](https://brendaneich.com/)
+  * [粉丝日志](http://blog.fens.me/)
+  * [王垠](http://www.yinwang.org/)
+  * [阮一峰](http://www.ruanyifeng.com/blog/)
+  * [TJ](https://github.com/tj) - 程序员兼艺术家
+  
+  ### 小巧工具
+  
+  * [carbon](https://carbon.now.sh/?bg=rgba(210%2C219%2C226%2C1)&t=seti&wt=bw&l=auto&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=48px&ph=32px&ln=false&fm=Hack&fs=16px&lh=133%25&si=false&es=2x&wm=false&ts=false) - 一个精美代码图片生成网站，非常适合技术类分享图片
+  * [fiddle](https://www.telerik.com/fiddler) - 强大的转包工具 
+  * [typora - 极简的 markdwon 编辑器](https://typora.io/)
+  
+  ### 书籍推荐
+  
+  * [the little schemer](http://www.ccs.neu.edu/home/matthias/BTLS/)
+  * [eloquentjavascript](http://eloquentjavascript.net/)
+  * [The Design of Everyday Things](http://book.douban.com/subject/1365318/)
+  * [The UNIX Hater's Handbook](http://book.douban.com/subject/1872221/)
+  * [How to Design Programs](http://www.htdp.org/)
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false

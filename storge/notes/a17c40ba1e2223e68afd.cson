@@ -1,0 +1,1024 @@
+createdAt: "2018-10-12T02:47:54.903Z"
+updatedAt: "2018-10-12T06:06:09.861Z"
+type: "MARKDOWN_NOTE"
+folder: "d3441b01ef2251aec113"
+title: "不再使用 Moment.js"
+content: '''
+  # 不再使用 Moment.js
+  [原文：You don't (may not) need Moment.js](https://github.com/you-dont-need/You-Dont-Need-Momentjs)
+  
+  [Moment.js](https://momentjs.com/)  是一个很棒的时间日期库，它提供了许多的操作时间日期的工具函数。但是如果你的应用对性能要求极高的话，那么 Moment.js 可能会带来巨大的性能问题，因为它的 API 过于复杂，包体积过大。
+  
+  
+  ![Large bundle size](/static/img/you-dont-need-moment-js.png)
+  
+  ## Moment.js 具有如下缺点：
+  * Moment.js 的 API 是面向对象的，基于此再打包时会造成体积过大和性能问题，因为无法使用 tree-shaking 的方式进行优化。
+  * API 是面向对象的而不是纯函数，因而 API 易受污染而引起 bug: https://github.com/moment/moment/blob/develop/src/test/moment/add_subtract.js#L244-L286
+  
+  如果你引入了 moment.js 但仅仅使用了一些简单的 API，那就会显得没必要，同时会时你的应用变得臃肿。
+  
+  [dayjs](https://github.com/iamkun/dayjs) 的内核更小同时具有与 moment.js 类似的 API，便于从 momeng.js 重构为 dayjs。
+  
+  [date-fns](https://github.com/date-fns/date-fns) 支持 [tree-shaking 和其它的优势](https://github.com/date-fns/date-fns/issues/275#issuecomment-264934189) ，因此它能够很好的与 React,Sinon.js,webpack 一起使用。
+  [为什么人们使用其它的方案替代 momeng.js](https://github.com/moment/moment/issues/2373 )
+  
+  ## 对比
+  
+  | 名称                                     | 大小(gzip压缩)                        | Tree-shaking | 知名度 | API 丰富程度 | 编程范式    | Timezone Support      | Locale |
+  | ---------------------------------------- | --------------------------------- | ------------ | ---------- | ---------------- | ---------- | --------------------- | ------ |
+  | [Moment.js](https://momentjs.com/)       | 329K(69.6K)                       | 否           | 38k        | 高             | 面向对象（OO）         | Good(moment-timezone) | 123    |
+  | [date-fns](https://date-fns.org)         | 78.4k(13.4k) without tree-shaking | 是          | 13k        | 高             | 函数式（Functional） | Not yet               | 46     |
+  | [dayjs](https://github.com/iamkun/dayjs) | 6.5k(2.6k) without plugins        | 否           | 14k        | 中           | 面向对象（OO）         | Not yet               | 23     |
+  
+  ## 开发者的呼声
+  > [使用 date-fns 替代 moment.js 后打包体积减少 40%](https://github.com/oysterprotocol/webnode/pull/116)
+  
+  > > &mdash;<cite>Jared Farago from [webnode](https://github.com/oysterprotocol/webnode/pull/116) project.</cite>
+  
+  
+  > [如果你在寻求好的替代 moment.js 的方案，那么你可以使用原生的 JavaScript 对象和数组方法来替代避免项目变得过大](https://twitter.com/dan_abramov/status/805030922785525760)
+  
+  > &mdash;<cite>Dan Abramov, Author of [Redux](https://github.com/reduxjs/redux) and co-author of [Create React App](https://github.com/facebook/create-react-app). Building tools for humans.</cite>
+  
+  > > [我强烈推荐使用 date-fns 替代 Moment.js, date-fns 具有友好的 API 同时你可以只引用你使用的那部分](https://twitter.com/silvenon/status/804946772690923520)
+  
+  
+  > &mdash;<cite>Matija Marohnić, a design-savvy frontend developer from Croatia.</cite>
+  
+  > [昨天在项目中移除 moment.js 后，项目体积减少了将近一半](https://twitter.com/gribnoysup/status/805061630752997377)
+  
+  > &mdash;<cite>Sergey Petushkov, a javaScript developer from Moscow, Russia • Currently in Berlin, Germany.</cite>
+  
+  ## ESLint Plugin
+  
+  <p align="center">
+    <a href="https://www.npmjs.com/package/eslint-plugin-you-dont-need-momentjs">
+      <img src="https://img.shields.io/npm/v/eslint-plugin-you-dont-need-momentjs.svg?style=flat-square"
+        alt="NPM Version">
+    </a>
+    <a href="https://www.npmjs.org/package/eslint-plugin-you-dont-need-momentjs">
+      <img src="http://img.shields.io/npm/dm/eslint-plugin-you-dont-need-momentjs.svg?style=flat-square?style=flat-square"
+        alt="Downloads">
+    </a>
+    <a href="https://travis-ci.org/you-dont-need/You-Dont-Need-Momentjs">
+      <img src="https://img.shields.io/travis/you-dont-need/You-Dont-Need-Momentjs/master.svg?style=flat-square"
+        alt="Build Status">
+    </a>
+    <a href="https://coveralls.io/github/you-dont-need/You-Dont-Need-Momentjs?branch=master">
+      <img src="https://img.shields.io/coveralls/you-dont-need/You-Dont-Need-Momentjs/master.svg?style=flat-square"
+        alt="Coverage Status" />
+    </a>
+    <a href="https://david-dm.org/you-dont-need/You-Dont-Need-Momentjs">
+      <img src="https://img.shields.io/david/you-dont-need/You-Dont-Need-Momentjs.svg?style=flat-square"
+           alt="Dependency Status">
+    </a>
+  </p>
+  
+  
+  如果你在使用 [ESLint](http://eslint.org/), 可以安装一个 [esLint 插件]((http://eslint.org/docs/user-guide/configuring#using-the-configuration-from-a-plugin))来检测你的代码哪部分的 Moment.js 代码是不必要的。
+  Install the plugin...
+  
+  ```sh
+  npm install --save-dev eslint-plugin-you-dont-need-momentjs
+  ```
+  
+  然后更新你的配置
+  
+  ```js
+  "extends" : ["plugin:you-dont-need-momentjs/recommended"],
+  ```
+  
+  ## Quick Links
+  
+  **[Parse](#parse)**
+  
+  1. [String + Date Format](#string--date-format)
+  1. [String + Time Format](#string--time-format)
+  1. [String + Format + locale](#string--format--locale)
+  
+  **[Get + Set](#get-set)**
+  
+  1. [Millisecond/Second/Minute/Hour](#millisecond--second--minute--hour)
+  1. [Date of Month](#date-of-month)
+  1. [Day of Week](#day-of-week)
+  1. [Day of Year](#day-of-year)
+  1. [Week of Year](#week-of-year)
+  1. [Days in Month](#days-in-month)
+  1. [Weeks in Year](#weeks-in-year)
+  1. [Maximum of the given dates](#maximum-of-the-given-dates)
+  1. [Minimum of the given dates](#minimum-of-the-given-dates)
+  
+  **[Manipulate](#manipulate)**
+  
+  1. [Add](#add)
+  1. [Subtract](#subtract)
+  1. [Start of Time](#start-of-time)
+  1. [End of Time](#end-of-time)
+  
+  **[Display](#display)**
+  
+  1. [Format](#format)
+  1. [Time from now](#time-from-now)
+  1. [Time from X](#time-from-x)
+  1. [Difference](#difference)
+  
+  **[Query](#query)**
+  
+  1. [Is Before](#is-before)
+  1. [Is Same](#is-same)
+  1. [Is After](#is-after)
+  1. [Is Between](#is-between)
+  1. [Is Leap Year](#is-leap-year)
+  1. [Is a Date](#is-a-date)
+  
+  
+  ⚠️ 如上提供的是 date-fns [v2](https://date-fns.org/v2.0.0-alpha.16/docs/Getting-Started)  版的代码，目前还不是正式版。在这里可以查看正式版的代码 [ v1 docs](https://date-fns.org/docs/Getting-Started)。
+  
+  ## Parse
+  
+  ### String + Date Format
+  
+  解析字符串格式的日期并返回指定格式的新日期。
+  ```js
+  // Moment.js
+  moment('12-25-1995', 'MM-DD-YYYY');
+  // => "1995-12-24T13:00:00.000Z"
+  
+  // date-fns
+  import parse from 'date-fns/parse';
+  parse('12-25-1995', 'MM-dd-yyyy', new Date());
+  // => "1995-12-24T13:00:00.000Z"
+  
+  // dayjs
+  dayjs('12-25-1995');
+  // => "1995-12-24T13:00:00.000Z"
+  ```
+  
+  **[⬆ back to top](#quick-links)**
+  
+  ### String + Time Format
+  
+  解析时间字符串并返回指定格式的新时间。
+  
+  ```js
+  // Moment.js
+  moment('2010-10-20 4:30', 'YYYY-MM-DD HH:mm');
+  // => "2010-10-19T17:30:00.000Z"
+  
+  // date-fns
+  import parse from 'date-fns/parse';
+  parse('2010-10-20 4:30', 'yyyy-MM-dd H:mm', new Date());
+  // => "2010-10-19T17:30:00.000Z"
+  
+  // dayjs ❌ does not support custom format parse
+  ```
+  
+  **[⬆ back to top](#quick-links)**
+  
+  ### String + Format + locale
+  
+  Return the date parsed from string using the given format string and locale.
+  
+  ```js
+  // Moment.js
+  moment('2012 mars', 'YYYY MMM', 'fr');
+  // => "2012-02-29T13:00:00.000Z"
+  
+  // date-fns
+  import parse from 'date-fns/parse';
+  import fr from 'date-fns/locale/fr';
+  parse('2012 mars', 'yyyy MMMM', new Date(), { locale: fr });
+  // => "2012-02-29T13:00:00.000Z"
+  
+  // dayjs ❌ does not support custom format parse
+  ```
+  
+  **[⬆ back to top](#quick-links)**
+  
+  ## Get + Set
+  
+  ### Millisecond / Second / Minute / Hour
+  
+  Get the `Millisecond/Second/Minute/Hour` of the given date.
+  
+  ```js
+  // Moment.js
+  moment().seconds();
+  // => 49
+  moment().hours();
+  // => 19
+  
+  // Native
+  new Date().getSeconds();
+  // => 49
+  new Date().getHours();
+  // => 19
+  
+  // date-fns
+  import getSeconds from 'date-fns/getSeconds';
+  import getHours from 'date-fns/getHours';
+  getSeconds(new Date());
+  // => 49
+  getHours(new Date());
+  // => 19
+  
+  // dayjs
+  dayjs().second();
+  // => 49
+  dayjs().hour();
+  // => 19
+  ```
+  
+  ### 性能测试结果
+  
+  | Library | Time       |
+  | ------- | ---------- |
+  | Moment  | 1845.162ms |
+  | Native  | 661.061ms  |
+  | DateFns | 909.328ms  |
+  | DayJs   | 970.660ms  |
+  
+  Set the `Millisecond/Second/Minute/Hour` of the given date.
+  
+  ```js
+  // Moment.js
+  moment().seconds(30);
+  // => "2018-09-09T09:12:30.695Z"
+  moment().hours(13);
+  // => "2018-09-09T03:12:49.695Z"
+  
+  // Native
+  new Date(new Date().setSeconds(30));
+  // => "2018-09-09T09:12:30.695Z"
+  new Date(new Date().setHours(13));
+  // => "2018-09-09T03:12:49.695Z"
+  
+  // date-fns
+  import setSeconds from 'date-fns/setSeconds';
+  import setHours from 'date-fns/setHours';
+  setSeconds(new Date(), 30);
+  // => "2018-09-09T09:12:30.695Z"
+  setHours(new Date(), 13);
+  // => "2018-09-09T03:12:49.695Z"
+  
+  // dayjs
+  dayjs().set('second', 30);
+  // => "2018-09-09T09:12:30.695Z"
+  dayjs().set('hour', 13);
+  // => "2018-09-09T03:12:49.695Z"
+  ```
+  
+  ### 性能测试结果
+  
+  | Library | Time       |
+  | ------- | ---------- |
+  | Moment  | 2211.997ms |
+  | Native  | 1255.035ms |
+  | DateFns | 1318.111ms |
+  | DayJs   | 3650.978ms |
+  
+  **[⬆ back to top](#quick-links)**
+  
+  ### Date of Month
+  
+  Gets or sets the day of the month.
+  
+  ```js
+  // Moment.js
+  moment().date();
+  // => 9
+  moment().date(4);
+  // => "2018-09-04T09:12:49.695Z"
+  
+  // Native
+  new Date().getDate();
+  // => 9
+  new Date().setDate(4);
+  // => "2018-09-04T09:12:49.695Z"
+  
+  // date-fns
+  import getDate from 'date-fns/getDate';
+  import setDate from 'date-fns/setDate';
+  getDate(new Date());
+  // => 9
+  setDate(new Date(), 4);
+  // => "2018-09-04T09:12:49.695Z"
+  
+  // dayjs
+  dayjs().date();
+  // => 9
+  dayjs().set('date', 4);
+  // => "2018-09-04T09:12:49.695Z"
+  ```
+  
+  ### 性能测试结果
+  
+  | Library | Time       |
+  | ------- | ---------- |
+  | Moment  | 1766.847ms |
+  | Native  | 802.727ms  |
+  | DateFns | 1118.577ms |
+  | DayJs   | 2127.448ms |
+  
+  **[⬆ back to top](#quick-links)**
+  
+  ### Day of Week
+  
+  Gets or sets the day of the week.
+  
+  ```js
+  // Moment.js
+  moment().day();
+  // => 0 (Sunday)
+  moment().day(-14);
+  // => "2018-08-26T09:12:49.695Z"
+  
+  // Native
+  new Date().getDay();
+  // => 0 (Sunday)
+  new Date().setDate(new Date().getDate() - 14);
+  // => "2018-08-26T09:12:49.695Z"
+  
+  // date-fns
+  import getDay from 'date-fns/getDay';
+  import setDay from 'date-fns/setDay';
+  getDay(new Date());
+  // => 0 (Sunday)
+  setDay(new Date(), -14);
+  // => "2018-08-26T09:12:49.695Z"
+  
+  // dayjs
+  dayjs().day();
+  // => 0 (Sunday)
+  dayjs().set('day', -14);
+  // => "2018-08-26T09:12:49.695Z"
+  ```
+  
+  | Library | Time       |
+  | ------- | ---------- |
+  | Moment  | 2456.520ms |
+  | Native  | 1052.091ms |
+  | DateFns | 1467.430ms |
+  | DayJs   | 2137.842ms |
+  
+  **[⬆ back to top](#quick-links)**
+  
+  ### Day of Year
+  
+  Gets or sets the day of the year.
+  
+  ```js
+  // Moment.js
+  moment().dayOfYear();
+  // => 252
+  moment().dayOfYear(256);
+  // => "2018-09-13T09:12:49.695Z"
+  
+  // Native
+  Math.floor(
+    (new Date() - new Date(new Date().getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24
+  );
+  // => 252
+  
+  // date-fns
+  import getDayOfYear from 'date-fns/getDayOfYear';
+  import setDayOfYear from 'date-fns/setDayOfYear';
+  getDayOfYear(new Date());
+  // => 252
+  setDayOfYear(new Date(), 256);
+  // => "2018-09-13T09:12:49.695Z"
+  
+  // dayjs ❌ does not support day of year
+  ```
+  ### 性能测试结果
+  | Library | Time        |
+  | ------- | ----------- |
+  | Moment  | 14853.342ms |
+  | Native  | 959.097ms   |
+  | DateFns | 4680.491ms  |
+  | DayJs   | -           |
+  
+  **[⬆ back to top](#quick-links)**
+  
+  ### Week of Year
+  
+  Gets or sets the week of the year.
+  
+  ```js
+  // Moment.js
+  moment().week();
+  // => 37
+  moment().week(24);
+  // => "2018-06-10T09:12:49.695Z"
+  
+  // date-fns
+  import getWeek from 'date-fns/getWeek';
+  import setWeek from 'date-fns/setWeek';
+  getWeek(new Date());
+  // => 37
+  setWeek(new Date(), 24);
+  // => "2018-06-10T09:12:49.695Z"
+  
+  // native getWeek
+  const day = new Date();
+  const MILLISECONDS_IN_WEEK = 604800000;
+  const firstDayOfWeek = 1; // monday as the first day (0 = sunday)
+  const startOfYear = new Date(day.getFullYear(), 0, 1);
+  startOfYear.setDate(
+    startOfYear.getDate() + (firstDayOfWeek - (startOfYear.getDay() % 7))
+  );
+  const dayWeek = Math.round((day - startOfYear) / MILLISECONDS_IN_WEEK) + 1;
+  // => 37
+  
+  // native setWeek
+  const day = new Date();
+  const week = 24;
+  const MILLISECONDS_IN_WEEK = 604800000;
+  const firstDayOfWeek = 1; // monday as the first day (0 = sunday)
+  const startOfYear = new Date(day.getFullYear(), 0, 1);
+  startOfYear.setDate(
+    startOfYear.getDate() + (firstDayOfWeek - (startOfYear.getDay() % 7))
+  );
+  const dayWeek = Math.round((day - startOfYear) / MILLISECONDS_IN_WEEK) + 1;
+  day.setDate(day.getDate() - (dayWeek - week) * 7);
+  day.toISOString();
+  // => "2018-06-10T09:12:49.794Z
+  
+  // dayjs ⚠️ requires weekOfYear plugin
+  import weekOfYear from 'dayjs/plugin/weekOfYear';
+  dayjs.extend(weekOfYear);
+  dayjs().week();
+  // => 37
+  // dayjs ❌ does not support set week of year
+  ```
+  
+  ### 性能测试结果
+  | Library | Time        |
+  | ------- | ----------- |
+  | Moment  | 13225.976ms |
+  | Native  | 1314.261ms  |
+  | DateFns | 4694.894ms  |
+  | DayJs   | -           |
+  
+  **[⬆ back to top](#quick-links)**
+  
+  ### Days in Month
+  
+  Get the number of days in the current month.
+  
+  ```js
+  // Moment.js
+  moment('2012-02', 'YYYY-MM').daysInMonth();
+  // => 29
+  
+  // Native
+  new Date(2012, 02, 0).getDate();
+  // => 29
+  
+  // date-fns
+  import getDaysInMonth from 'date-fns/getDaysInMonth';
+  getDaysInMonth(new Date(2012, 1));
+  // => 29
+  
+  // dayjs
+  dayjs('2012-02').daysInMonth();
+  // => 29
+  ```
+  
+  ### 性能测试结果
+  | Library | Time       |
+  | ------- | ---------- |
+  | Moment  | 4836.243ms |
+  | Native  | 504.241ms  |
+  | DateFns | 1584.524ms |
+  | DayJs   | 2965.774ms |
+  
+  **[⬆ back to top](#quick-links)**
+  
+  ### Weeks in Year
+  
+  Gets the number of weeks in the current year, according to ISO weeks.
+  
+  ```js
+  // Moment.js
+  moment().isoWeeksInYear();
+  // => 52
+  
+  // date-fns
+  import getISOWeeksInYear from 'date-fns/getISOWeeksInYear';
+  getISOWeeksInYear(new Date());
+  // => 52
+  
+  // dayjs ❌ does not support weeks in the year
+  ```
+  
+  ### 性能测试结果
+  | Library | Time        |
+  | ------- | ----------- |
+  | Moment  | 1282.320ms  |
+  | Native  | -           |
+  | DateFns | 12832.076ms |
+  | DayJs   | -           |
+  
+  **[⬆ back to top](#quick-links)**
+  
+  ### Maximum of the given dates
+  
+  Returns the maximum (most distant future) of the given date.
+  
+  ```js
+  const array = [
+    new Date(2017, 4, 13),
+    new Date(2018, 2, 12),
+    new Date(2016, 0, 10),
+    new Date(2016, 0, 9),
+  ];
+  // Moment.js
+  moment.max(array.map(a => moment(a)));
+  // => "2018-03-11T13:00:00.000Z"
+  
+  // Native
+  new Date(Math.max.apply(null, array)).toISOString();
+  // => "2018-03-11T13:00:00.000Z"
+  
+  // date-fns
+  import max from 'date-fns/max';
+  max(array);
+  // => "2018-03-11T13:00:00.000Z"
+  
+  // dayjs ❌ does not support the maximum of the given dates
+  ```
+  
+  ### 性能测试结果
+  | Library | Time       |
+  | ------- | ---------- |
+  | Moment  | 1736.095ms |
+  | Native  | 1104.626ms |
+  | DateFns | 966.238ms  |
+  | DayJs   | -          |
+  
+  **[⬆ back to top](#quick-links)**
+  
+  ### Minimum of the given dates
+  
+  Returns the minimum (most distant future) of the given date.
+  
+  ```js
+  const array = [
+    new Date(2017, 4, 13),
+    new Date(2018, 2, 12),
+    new Date(2016, 0, 10),
+    new Date(2016, 0, 9),
+  ];
+  // Moment.js
+  moment.min(array.map(a => moment(a)));
+  // => "2016-01-08T13:00:00.000Z"
+  
+  // Native
+  new Date(Math.min.apply(null, array)).toISOString();
+  // => "2016-01-08T13:00:00.000Z"
+  
+  // date-fns
+  import min from 'date-fns/min';
+  min(array);
+  // => "2016-01-08T13:00:00.000Z"
+  
+  // dayjs ❌ does not support the minimum of the given dates
+  ```
+  
+  ### 性能测试结果
+  | Library | Time       |
+  | ------- | ---------- |
+  | Moment  | 1937.293ms |
+  | Native  | 1164.853ms |
+  | DateFns | 908.990ms  |
+  | DayJs   | -          |
+  
+  **[⬆ back to top](#quick-links)**
+  
+  ## Manipulate
+  
+  ### Add
+  
+  Add the specified number of days to the given date.
+  
+  ```js
+  // Moment.js
+  moment().add(7, 'days');
+  // => "2018-09-16T09:12:49.695Z"
+  
+  // Native
+  const now = new Date();
+  now.setDate(now.getDate() + 7);
+  // => "Sun Sep 16 2018 09:12:49"
+  
+  // date-fns
+  import addDays from 'date-fns/addDays';
+  addDays(new Date(), 7);
+  // => "2018-09-16T09:12:49.695Z"
+  
+  // dayjs
+  dayjs().add(7, 'day');
+  // => "2018-09-16T09:12:49.695Z"
+  ```
+  
+  ### 性能测试结果
+  | Library | Time       |
+  | ------- | ---------- |
+  | Moment  | 1468.151ms |
+  | Native  | 208.735ms  |
+  | DateFns | 337.129ms  |
+  | DayJs   | 631.982ms  |
+  
+  **[⬆ back to top](#quick-links)**
+  
+  ### Subtract
+  
+  Subtract the specified number of days from the given date.
+  
+  ```js
+  // Moment.js
+  moment().subtract(7, 'days');
+  // => "2018-09-02T09:12:49.695Z"
+  
+  // Native
+  new Date(new Date().getTime() - 1000 * 60 * 60 * 24 * 7);
+  // => Sun Sep 09 2018 09:12:49
+  
+  // date-fns
+  import subDays from 'date-fns/subDays';
+  subDays(new Date(), 7);
+  // => "2018-09-02T09:12:49.695Z"
+  
+  // dayjs
+  dayjs().subtract(7, 'day');
+  // => "2018-09-02T09:12:49.695Z"
+  ```
+  
+  ### 性能测试结果
+  | Library | Time       |
+  | ------- | ---------- |
+  | Moment  | 1638.627ms |
+  | Native  | 246.940ms  |
+  | DateFns | 759.963ms  |
+  | DayJs   | 954.443ms  |
+  
+  **[⬆ back to top](#quick-links)**
+  
+  ### Start of Time
+  
+  Return the start of a unit of time for the given date.
+  
+  ```js
+  // Moment.js
+  moment().startOf('month');
+  // => "2018-08-31T14:00:00.000Z"
+  
+  // date-fns
+  import startOfMonth from 'date-fns/startOfMonth';
+  startOfMonth(new Date());
+  // => "2018-08-31T14:00:00.000Z"
+  
+  // dayjs
+  dayjs().startOf('month');
+  // => "2018-08-31T14:00:00.000Z"
+  ```
+  
+  ### 性能测试结果
+  | Library | Time       |
+  | ------- | ---------- |
+  | Moment  | 3322.043ms |
+  | Native  | -          |
+  | DateFns | 1046.938ms |
+  | DayJs   | 1268.229ms |
+  
+  **[⬆ back to top](#quick-links)**
+  
+  ### End of Time
+  
+  Return the end of a unit of time for the given date.
+  
+  ```js
+  // Moment.js
+  moment().endOf('day');
+  // => "2018-09-09T13:59:59.999Z"
+  
+  // Native
+  const end = new Date();
+  end.setHours(23, 59, 59, 999);
+  end.toISOString();
+  // => "2018-09-09T16:59:59.999Z"
+  
+  // date-fns
+  import endOfDay from 'date-fns/endOfDay';
+  endOfDay(new Date());
+  // => "2018-09-09T13:59:59.999Z"
+  
+  // dayjs
+  dayjs().endOf('day');
+  // => "2018-09-09T13:59:59.999Z"
+  ```
+  ### 性能测试结果
+  | Library | Time       |
+  | ------- | ---------- |
+  | Moment  | 4583.067ms |
+  | Native  | 284.882ms  |
+  | DateFns | 386.746ms  |
+  | DayJs   | 1138.415ms |
+  
+  **[⬆ back to top](#quick-links)**
+  
+  ## Display
+  
+  ### Format
+  
+  Return the formatted date string in the given format.
+  
+  ```js
+  // Moment.js
+  moment().format('dddd, MMMM Do YYYY, h:mm:ss A');
+  // => "Sunday, September 9th 2018, 7:12:49 PM"
+  moment().format('ddd, hA');
+  // => "Sun, 7PM"
+  
+  // date-fns
+  import format from 'date-fns/format';
+  format(new Date(), 'eeee, MMMM do YYYY, h:mm:ss aa');
+  // => "Sunday, September 9th 2018, 7:12:49 PM"
+  format(new Date(), 'eee, ha');
+  // => "Sun, 7PM"
+  
+  // dayjs
+  dayjs().format('dddd, MMMM D YYYY, h:mm:ss A');
+  // => "Sunday, September 9 2018, 7:12:49 PM" ⚠️  not support 9th
+  dayjs().format('ddd, hA');
+  // => "Sun, 7PM"
+  ```
+  
+  **[⬆ back to top](#quick-links)**
+  
+  ### Time from now
+  
+  Return time from now.
+  
+  ```js
+  // Moment.js
+  moment(1536484369695).fromNow();
+  // => "4 days ago"
+  
+  // date-fns
+  import formatDistance from 'date-fns/formatDistance';
+  formatDistance(new Date(1536484369695), new Date(), { addSuffix: true });
+  // => "4 days ago"
+  
+  // dayjs ⚠️ requires relativeTime plugin
+  import relativeTime from 'dayjs/plugin/relativeTime';
+  dayjs.extend(relativeTime);
+  
+  dayjs(1536484369695).fromNow();
+  // => "5 days ago" ⚠️  the rounding method of this plugin is different from moment.js and date-fns, use with care.
+  ```
+  
+  **[⬆ back to top](#quick-links)**
+  
+  ### Time from x
+  
+  Return time from x.
+  
+  ```js
+  // Moment.js
+  moment([2007, 0, 27]).to(moment([2007, 0, 29]));
+  // => "in 2 days"
+  
+  // date-fns
+  import formatDistance from 'date-fns/formatDistance';
+  formatDistance(new Date(2007, 0, 27), new Date(2007, 0, 29));
+  // => "2 days"
+  
+  // dayjs ⚠️ requires relativeTime plugin
+  import relativeTime from 'dayjs/plugin/relativeTime';
+  dayjs.extend(relativeTime);
+  dayjs('2007-01-27').to(dayjs('2007-01-29'));
+  // => "in 2 days"
+  ```
+  
+  **[⬆ back to top](#quick-links)**
+  
+  ### Difference
+  
+  Get the unit of time between the given dates.
+  
+  ```js
+  // Moment.js
+  moment([2007, 0, 27]).diff(moment([2007, 0, 29]));
+  // => -172800000
+  moment([2007, 0, 27]).diff(moment([2007, 0, 29]), 'days');
+  // => -2
+  
+  // Native
+  new Date(2007, 0, 27) - new Date(2007, 0, 29);
+  // => -172800000
+  Math.ceil(
+    (new Date(2007, 0, 27) - new Date(2007, 0, 29)) / 1000 / 60 / 60 / 24
+  );
+  // => -2
+  
+  // date-fns
+  import differenceInMilliseconds from 'date-fns/differenceInMilliseconds';
+  differenceInMilliseconds(new Date(2007, 0, 27), new Date(2007, 0, 29));
+  // => -172800000
+  import differenceInDays from 'date-fns/differenceInDays';
+  differenceInDays(new Date(2007, 0, 27), new Date(2007, 0, 29));
+  // => -2
+  
+  // dayjs
+  dayjs('2007-01-27').diff(dayjs('2007-01-29'), 'milliseconds');
+  // => -172800000
+  dayjs('2007-01-27').diff(dayjs('2007-01-29'), 'days');
+  // => -2
+  ```
+  
+  **[⬆ back to top](#quick-links)**
+  
+  ## Query
+  
+  ### Is Before
+  
+  Check if a date is before another date.
+  
+  ```js
+  // Moment.js
+  moment('2010-10-20').isBefore('2010-10-21');
+  // => true
+  
+  // Native
+  new Date(2010, 10, 20) < new Date(2010, 10, 21);
+  // => true
+  
+  // date-fns
+  import isBefore from 'date-fns/isBefore';
+  isBefore(new Date(2010, 9, 20), new Date(2010, 9, 21));
+  // => true
+  
+  // dayjs
+  dayjs('2010-10-20').isBefore('2010-10-21');
+  // => true
+  ```
+  
+  **[⬆ back to top](#quick-links)**
+  
+  ### Is Same
+  
+  Check if a date is the same as another date.
+  
+  ```js
+  // Moment.js
+  moment('2010-10-20').isSame('2010-10-21');
+  // => false
+  moment('2010-10-20').isSame('2010-10-20');
+  // => true
+  moment('2010-10-20').isSame('2010-10-21', 'month');
+  // => true
+  
+  // Native
+  new Date(2010, 9, 20) === new Date(2010, 9, 21);
+  // => false
+  new Date(2010, 9, 20) === new Date(2010, 9, 20);
+  // => true
+  new Date(2010, 9, 20).toDateString().substring(4, 7) ===
+    new Date(2010, 9, 21).toDateString().substring(4, 7);
+  // => true
+  
+  // date-fns
+  import isSameDay from 'date-fns/isSameDay';
+  import isSameMonth from 'date-fns/isSameMonth';
+  isSameDay(new Date(2010, 9, 20), new Date(2010, 9, 21));
+  // => false
+  isSameDay(new Date(2010, 9, 20), new Date(2010, 9, 20));
+  // => true
+  isSameMonth(new Date(2010, 9, 20), new Date(2010, 9, 21));
+  // => true
+  
+  // dayjs
+  dayjs('2010-10-20').isSame('2010-10-21');
+  // => false
+  dayjs('2010-10-20').isSame('2010-10-20');
+  // => true
+  // dayjs ❌ does not support is same month
+  ```
+  
+  **[⬆ back to top](#quick-links)**
+  
+  ### Is After
+  
+  Check if a date is after another date.
+  
+  ```js
+  // Moment.js
+  moment('2010-10-20').isAfter('2010-10-19');
+  // => true
+  
+  // Native
+  new Date(2010, 9, 20) > new Date(2010, 9, 19);
+  // => true
+  
+  // date-fns
+  import isAfter from 'date-fns/isAfter';
+  isAfter(new Date(2010, 9, 20), new Date(2010, 9, 19));
+  // => true
+  
+  // dayjs
+  dayjs('2010-10-20').isAfter('2010-10-19');
+  // => true
+  ```
+  
+  **[⬆ back to top](#quick-links)**
+  
+  ### Is Between
+  
+  Check if a date is between two other dates.
+  
+  ```js
+  // Moment.js
+  moment('2010-10-20').isBetween('2010-10-19', '2010-10-25');
+  // => true
+  
+  // date-fns
+  import isWithinInterval from 'date-fns/isWithinInterval';
+  isWithinInterval(new Date(2010, 9, 20), {
+    start: new Date(2010, 9, 19),
+    end: new Date(2010, 9, 25),
+  });
+  // => true
+  
+  // dayjs ⚠️ requires isBetween plugin
+  import isBetween from 'dayjs/plugin/isBetween';
+  dayjs.extend(isBetween);
+  dayjs('2010-10-20').isBetween('2010-10-19', '2010-10-25');
+  // => true
+  ```
+  
+  **[⬆ back to top](#quick-links)**
+  
+  ### Is Leap Year
+  
+  Check if a year is a leap year.
+  
+  ```js
+  // Moment.js
+  moment([2000]).isLeapYear();
+  // => true
+  
+  // Native
+  new Date(2000, 1, 29).getDate() === 29;
+  // => true
+  
+  // date-fns
+  import isLeapYear from 'date-fns/isLeapYear';
+  isLeapYear(new Date(2000, 0, 1));
+  // => true
+  
+  // dayjs ⚠️ requires isLeapYear plugin
+  import isLeapYear from 'dayjs/plugin/isLeapYear';
+  dayjs.extend(isLeapYear);
+  dayjs('2000').isLeapYear();
+  // => true
+  ```
+  
+  **[⬆ back to top](#quick-links)**
+  
+  ### Is a Date
+  
+  Check if a variable is a native js Date object.
+  
+  ```js
+  // Moment.js
+  moment.isDate(new Date());
+  // => true
+  
+  // Native
+  new Date() instanceof Date;
+  // => true
+  
+  // date-fns
+  import isDate from 'date-fns/isDate';
+  isDate(new Date());
+  // => true
+  
+  // dayjs ❌ does not support is date
+  ```
+  
+  **[⬆ back to top](#quick-links)**
+  
+  # License
+  
+  MIT
+'''
+tags: [
+  "js"
+  "javascript"
+  "译文"
+]
+isStarred: false
+isTrashed: false

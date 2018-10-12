@@ -1,0 +1,30 @@
+{
+  "folders": [
+    {
+      "key": "07ffef3e322882b45034",
+      "color": "#1278BD",
+      "name": "Default"
+    },
+    {
+      "key": "d3441b01ef2251aec113",
+      "color": "#B013A4",
+      "name": "yangxiaofu-blog"
+    },
+    {
+      "key": "fba79554f9e6601d04b1",
+      "color": "#E8D252",
+      "name": "yangxiaofu-blog-site"
+    },
+    {
+      "key": "2f795db0a12b4be47e86",
+      "color": "#E8D252",
+      "name": "papers"
+    },
+    {
+      "key": "6a3ef8ea61ec57a1e16b",
+      "color": "#3FD941",
+      "name": "books"
+    }
+  ],
+  "version": "1.0"
+}

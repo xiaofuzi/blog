@@ -1,0 +1,35 @@
+createdAt: "2018-10-11T09:49:56.409Z"
+updatedAt: "2018-10-11T11:01:13.288Z"
+type: "MARKDOWN_NOTE"
+folder: "d3441b01ef2251aec113"
+title: "Web 动画的实现方式调研"
+content: '''
+  ## Web 动画的实现方式调研
+  
+  ### Animation Library
+  
+  * [anime.js](https://github.com/juliangarnier/anime/) 
+  
+  ![](https://camo.githubusercontent.com/9145cabc5ab7567fd64ed3687e34255dd33774a5/687474703a2f2f616e696d656a732e636f6d2f646f63756d656e746174696f6e2f6173736574732f696d672f726561646d652f616e696d656a732d6c6f676f2e676966)
+  
+  * [popmotion](https://popmotion.io/)
+      * pose - 为 React/React Native/Vue 而设计的动画库
+      * pure - 函数式动画库，提供一种动画的实现方式，不限制平台
+      * popcorn 
+      * stylefire
+      * framesync
+  
+  
+  * [mojs](http://mojs.io/)
+  可绘制各种类似的图形并添加复杂的动画效果。
+  
+  
+  * [lottie](http://airbnb.io/lottie/)
+  可将 AE 视频转换为 JavaScript 动画。
+  
+  ![](http://airbnb.io/lottie/images/Introduction_01_sm.gif)
+  ![](http://airbnb.io/lottie/images/Introduction_03_sm.gif)
+'''
+tags: []
+isStarred: false
+isTrashed: false

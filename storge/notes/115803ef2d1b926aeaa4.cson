@@ -1,0 +1,65 @@
+createdAt: "2018-10-12T06:11:00.390Z"
+updatedAt: "2018-10-12T07:07:49.165Z"
+type: "MARKDOWN_NOTE"
+folder: "2f795db0a12b4be47e86"
+title: "技术"
+content: '''
+  ## 技术
+  
+  * [如何撰写技术文档](https://www.divio.com/blog/documentation/)
+  > 技术文档（documents）分成四种：教程（tutorial）、指导（guide）、解释（explanation）和参考（reference）。本文解释了每一种文档的特点，并给出了写作建议。
+  
+  * [一个关于创业的 web 游戏](http://thefounder.biz/)
+      
+      ![](https://www.wangbase.com/blogimg/asset/201810/bg2018101217.jpg)
+  
+  * [ReactXP](https://microsoft.github.io/reactxp/)
+  > 微软基于 React Native 开发的框架，沿用了 React Native 的 API，可以用同一套代码编译出 Web、手机 和 Windows 应用。
+  
+  * [前端技术周刊引用](https://segmentfault.com/a/1190000016627505)
+  > Mozilla 推出 Firefox Reality，一款开源的 VR 浏览器，可以快捷的在首屏幕发现新 VR 体验和新 VR 游戏。
+  
+  > 10月5日，Google 发布 Project Stream，一个目标是在浏览器端可流畅运行 3A 级游戏的项目。技术核心在于将游戏的渲染与计算放到云端，而浏览器则负责声画输出和用户输入，此技术能够完美运行需要用户拥有 25M/s 的带宽，首发测试游戏为刺客信条·奥德赛。
+  
+  * [markdown与codesandbox的结合](https://markbox.js.org/)
+  
+  ## 探索
+  
+  * [最古老的动物化石](https://www.theguardian.com/science/2017/apr/12/mattresses-the-universe-and-everything-fossils-of-ediacaran-biota)
+  
+      ![](https://www.wangbase.com/blogimg/asset/201810/bg2018101206.jpg)
+      
+      发现场地：
+      ![](https://www.wangbase.com/blogimg/asset/201810/bg2018101207.jpg)
+  
+  * [机器人皮肤](https://news.yale.edu/2018/09/19/robotic-skins-turn-everyday-objects-robots)
+  
+  > 耶鲁大学的科学家发明了一种可卷曲的"机器人皮肤"，可以包裹在任何物体的外层，使得该物体变成可以控制的机器人。上图是毛绒填充的小马玩具穿上"机器人皮肤"以后，变成可以走动了。
+  
+  > 科学家已经实现了，给气球穿上"机器人皮肤"，使得气球变成可以编程控制。
+      ![](https://www.wangbase.com/blogimg/asset/201810/bg2018101209.jpg)
+  
+  ## 新闻
+  
+  * [51亿美元！刚刚，可口可乐出手，星巴克要急了](https://www.toutiao.com/a6611128947893600771/)
+  
+  > 左有瑞幸，右有Costa的被动局面， 让其必须做出积极的改变，否则维持多年的霸主地位很可能真的要“破”了!
+  
+  * [海底捞创始人张勇 公司一上市就立刻移民，网友你怎么看？](https://www.toutiao.com/a6610715468997067272/)
+  
+  > 海底捞上市之后，其招股书被曝出来，从招股书可以看出，张勇夫妇的国籍，目前已经更改为新加坡。
+  
+  * [“穿上秋裤，是对降温起码的尊重”，央视段子手又上热搜了](https://wenhui.whb.cn/third/jinri/201810/11/217240.html)
+  
+  > 秋衣秋裤还要讲究正确的穿着方式，秋衣要塞进秋裤，秋裤要用袜子封口，做到全封闭式立体保温才有效。
+  
+  * [手机届又出现了一个干掉前置镜头，实现全面屏的新思路,努比亚为全面屏提出的另一个新思路——双面屏。](https://www.toutiao.com/a6605093077298184712/)
+  
+  * [比抖音更狠，它正在摧毁年轻人的未来！](https://www.toutiao.com/a6603491935992676867/)
+  
+  > 在中国近 1.7 亿 90 后中，开通花呗的人数超过了 4500 万，也就是说平均每 4 个 90 后就有 1 个使用花呗。
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false

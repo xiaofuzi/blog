@@ -1,0 +1,32 @@
+createdAt: "2018-10-10T09:20:44.113Z"
+updatedAt: "2018-10-10T09:30:59.787Z"
+type: "MARKDOWN_NOTE"
+folder: "fba79554f9e6601d04b1"
+title: "PROJECTS"
+content: '''
+  ## PROJECTS
+  
+  * [tiny.js](https://github.com/xiaofuzi/tiny.js)——让DOM操作变得更简单。
+  * [myRequire.js](https://github.com/xiaofuzi/commonJS)
+  	a simple commonJS module tool.
+  
+  * [Booker](https://github.com/xiaofuzi/booker)
+  	A fast, simple & powerful book framework, powered by Node.js.
+  	
+  
+  * [json_script](https://github.com/xiaofuzi/json_script)
+  	类似于less、sass这样的css预处理器，这里采用json格式的语法来编写css.
+  	
+  
+  ## BOOKS
+  
+  * [the little schemer](http://www.ccs.neu.edu/home/matthias/BTLS/)
+  * [eloquentjavascript](http://eloquentjavascript.net/)
+  * [The Design of Everyday Things](http://book.douban.com/subject/1365318/)
+  * [The UNIX Hater's Handbook](http://book.douban.com/subject/1872221/)
+  * [How to Design Programs](http://www.htdp.org/)
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false

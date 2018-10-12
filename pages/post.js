@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import Link from 'next/link';
-import Router from "next/router";
 
 import HeaderComponent from '../client/layout/header/header.js';
 import FooterComponent from "../client/layout/footer/footer.js";
