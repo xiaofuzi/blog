@@ -312,11 +312,19 @@ function (_Component) {
         },
         __self: this
       }, "\u5468\u520A"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "/post/ee0195143ab8688c92e5/",
+        href: "/twitter-notes/",
         className: "navbar-item",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 36
+        },
+        __self: this
+      }, "\u5C0F\u8BB0"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/post/ee0195143ab8688c92e5/",
+        className: "navbar-item",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 38
         },
         __self: this
       }, "\u5173\u4E8E")))));
@@ -12306,7 +12314,7 @@ function (_Component) {
 
 /***/ }),
 
-/***/ 9:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
@@ -12331,5 +12339,5 @@ module.exports = dll_5d62d38be3592dca3a42;
 
 /***/ })
 
-},[[9,"static/runtime/webpack.js","styles"]]]));;
+},[[3,"static/runtime/webpack.js","styles"]]]));;
 //# sourceMappingURL=index.js.map
