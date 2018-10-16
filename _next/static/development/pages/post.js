@@ -3305,7 +3305,7 @@ function (_Component) {
 
 /***/ }),
 
-/***/ 10:
+/***/ 9:
 /*!*****************************!*\
   !*** multi ./pages/post.js ***!
   \*****************************/
@@ -3330,5 +3330,5 @@ module.exports = dll_5d62d38be3592dca3a42;
 
 /***/ })
 
-},[[10,"static/runtime/webpack.js","styles"]]]));;
+},[[9,"static/runtime/webpack.js","styles"]]]));;
 //# sourceMappingURL=post.js.map
