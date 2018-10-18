@@ -1,9 +1,9 @@
-((window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/twitter-notes.js"],{
+((window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/react-canvas/docs.js"],{
 
-/***/ "./client/components/twitterNote/twitterNote.js":
-/*!******************************************************!*\
-  !*** ./client/components/twitterNote/twitterNote.js ***!
-  \******************************************************/
+/***/ "./client/components/NotesList/NotesList.js":
+/*!**************************************************!*\
+  !*** ./client/components/NotesList/NotesList.js ***!
+  \**************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -11,37 +11,262 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _twitterNote_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./twitterNote.scss */ "./client/components/twitterNote/twitterNote.scss");
-/* harmony import */ var _twitterNote_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_twitterNote_scss__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Users/yangxiaofu/work/opensource/Node/youdaoyun-note/client/components/twitterNote/twitterNote.js";
+/* harmony import */ var _NotesList_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./NotesList.scss */ "./client/components/NotesList/NotesList.scss");
+/* harmony import */ var _NotesList_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_NotesList_scss__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "/Users/yangxiaofu/work/opensource/Node/youdaoyun-note/client/components/NotesList/NotesList.js";
 
 
 /* harmony default export */ __webpack_exports__["default"] = (function (props) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "twitter-note",
+    className: "notes-list",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 4
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "twitter-note-content",
-    dangerouslySetInnerHTML: {
-      __html: props.note.content
-    },
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 5
     },
     __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 8
-    },
-    __self: this
-  }, "\u8BB0\u5F55\u4E8E ", props.note.createdAt));
+  }, props.items.map(function (item) {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      className: "note-item",
+      key: item.key,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 8
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      href: "/post/".concat(item.key, "/"),
+      className: "note-item-title",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 9
+      },
+      __self: this
+    }, item.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      className: "create-time",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 12
+      },
+      __self: this
+    }, item.createdAt));
+  })));
 });
+
+/***/ }),
+
+/***/ "./client/components/aside/aside.js":
+/*!******************************************!*\
+  !*** ./client/components/aside/aside.js ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return ASide; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _aside_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./aside.scss */ "./client/components/aside/aside.scss");
+/* harmony import */ var _aside_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_aside_scss__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "/Users/yangxiaofu/work/opensource/Node/youdaoyun-note/client/components/aside/aside.js";
+
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+var ASide =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(ASide, _Component);
+
+  function ASide() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    _classCallCheck(this, ASide);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(ASide)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "sortMenuItems", function (arr) {
+      return arr.sort(function (a, b) {
+        return Number(a.tags[0]) - Number(b.tags[0]);
+      });
+    });
+
+    return _this;
+  }
+
+  _createClass(ASide, [{
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      var menuObjec = this.props.menu || [0, 1];
+      var url = this.props.url;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("aside", {
+        className: "menu menu-side",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 10
+        },
+        __self: this
+      }, menuObjec.map(function (menu, i) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          key: i,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 13
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          className: "menu-label",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 14
+          },
+          __self: this
+        }, menu.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+          className: "menu-list",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 17
+          },
+          __self: this
+        }, _this2.sortMenuItems(menu.body).map(function (item) {
+          var isActive = item.key == url.query.id ? 'is-active' : '';
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+            key: item.key,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 22
+            },
+            __self: this
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+            className: isActive,
+            href: "/react-canvas/docs/".concat(item.key),
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 23
+            },
+            __self: this
+          }, item.title));
+        })));
+      }));
+    }
+  }]);
+
+  return ASide;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+
+
+/***/ }),
+
+/***/ "./client/components/iphone6/index.js":
+/*!********************************************!*\
+  !*** ./client/components/iphone6/index.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return IphoneSilver; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index.scss */ "./client/components/iphone6/index.scss");
+/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_index_scss__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "/Users/yangxiaofu/work/opensource/Node/youdaoyun-note/client/components/iphone6/index.js";
+
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+var IphoneSilver =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(IphoneSilver, _Component);
+
+  function IphoneSilver(props) {
+    _classCallCheck(this, IphoneSilver);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(IphoneSilver).call(this, props));
+  }
+
+  _createClass(IphoneSilver, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "iphone-wrap",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 12
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "screen",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 13
+        },
+        __self: this
+      }));
+    }
+  }]);
+
+  return IphoneSilver;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+
 
 /***/ }),
 
@@ -12138,10 +12363,10 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ "./pages/twitter-notes.js":
-/*!********************************!*\
-  !*** ./pages/twitter-notes.js ***!
-  \********************************/
+/***/ "./pages/react-canvas/docs.js":
+/*!************************************!*\
+  !*** ./pages/react-canvas/docs.js ***!
+  \************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -12154,12 +12379,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _client_layout_header_header_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../client/layout/header/header.js */ "./client/layout/header/header.js");
-/* harmony import */ var _client_layout_footer_footer_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../client/layout/footer/footer.js */ "./client/layout/footer/footer.js");
-/* harmony import */ var _client_components_twitterNote_twitterNote_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../client/components/twitterNote/twitterNote.js */ "./client/components/twitterNote/twitterNote.js");
-/* harmony import */ var _client_utils_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../client/utils.js */ "./client/utils.js");
+/* harmony import */ var _client_layout_header_header_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../client/layout/header/header.js */ "./client/layout/header/header.js");
+/* harmony import */ var _client_layout_footer_footer_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../client/layout/footer/footer.js */ "./client/layout/footer/footer.js");
+/* harmony import */ var _client_components_NotesList_NotesList_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../client/components/NotesList/NotesList.js */ "./client/components/NotesList/NotesList.js");
+/* harmony import */ var _client_components_aside_aside_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../client/components/aside/aside.js */ "./client/components/aside/aside.js");
+/* harmony import */ var _client_components_iphone6_index__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../client/components/iphone6/index */ "./client/components/iphone6/index.js");
+/* harmony import */ var _client_utils_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../client/utils.js */ "./client/utils.js");
 
-var _jsxFileName = "/Users/yangxiaofu/work/opensource/Node/youdaoyun-note/pages/twitter-notes.js";
+var _jsxFileName = "/Users/yangxiaofu/work/opensource/Node/youdaoyun-note/pages/react-canvas/docs.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -12190,6 +12417,8 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
+
 var HomePage =
 /*#__PURE__*/
 function (_Component) {
@@ -12208,49 +12437,51 @@ function (_Component) {
         className: "",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 19
+          lineNumber: 25
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_client_layout_header_header_js__WEBPACK_IMPORTED_MODULE_3__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 20
+          lineNumber: 26
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "container markdown-body",
+        className: "container markdown-body menu-wrap",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 21
+          lineNumber: 27
         },
         __self: this
-      }, this.props.notesList.map(function (note) {
-        return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-          className: "note-container",
-          key: note.key,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 24
-          },
-          __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_client_components_twitterNote_twitterNote_js__WEBPACK_IMPORTED_MODULE_5__["default"], {
-          note: note,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 25
-          },
-          __self: this
-        }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("hr", {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 26
-          },
-          __self: this
-        }));
-      })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_client_layout_footer_footer_js__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_client_components_aside_aside_js__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        menu: this.props.menuObj,
+        url: this.props.url,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 31
+          lineNumber: 28
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "container menu-body",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 29
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "content",
+        dangerouslySetInnerHTML: {
+          __html: this.props.note.content
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 30
+        },
+        __self: this
+      }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_client_layout_footer_footer_js__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 35
         },
         __self: this
       }));
@@ -12260,22 +12491,31 @@ function (_Component) {
     value: function () {
       var _getInitialProps = _asyncToGenerator(
       /*#__PURE__*/
-      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-        var res;
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(_ref) {
+        var query, res, resAll;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _context.next = 2;
-                return _client_utils_js__WEBPACK_IMPORTED_MODULE_6__["Http"].get("/notes/notesList");
-
-              case 2:
-                res = _context.sent;
-                return _context.abrupt("return", {
-                  notesList: res['twitterNotes']
+                query = _ref.query;
+                _context.next = 3;
+                return _client_utils_js__WEBPACK_IMPORTED_MODULE_8__["Http"].get("/notes/getNote", {
+                  key: query.id
                 });
 
-              case 4:
+              case 3:
+                res = _context.sent;
+                _context.next = 6;
+                return _client_utils_js__WEBPACK_IMPORTED_MODULE_8__["Http"].get("/notes/notesList");
+
+              case 6:
+                resAll = _context.sent;
+                return _context.abrupt("return", {
+                  note: res,
+                  menuObj: processMenu(resAll)
+                });
+
+              case 8:
               case "end":
                 return _context.stop();
             }
@@ -12283,7 +12523,7 @@ function (_Component) {
         }, _callee, this);
       }));
 
-      return function getInitialProps() {
+      return function getInitialProps(_x) {
         return _getInitialProps.apply(this, arguments);
       };
     }()
@@ -12291,8 +12531,29 @@ function (_Component) {
 
   return HomePage;
 }(react__WEBPACK_IMPORTED_MODULE_1__["Component"]);
+/**
+<div className='silver'>
+    <IphoneComponent />
+</div>
+ */
+
+/**
+ * process menu data
+*/
 
 
+
+
+function processMenu() {
+  var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  return [{
+    title: 'The Basics',
+    body: obj['react-canvas-basics']
+  }, {
+    title: 'Components',
+    body: obj['react-canvas-components']
+  }];
+}
     (function (Component, route) {
       if(!Component) return
       if (false) {}
@@ -12309,21 +12570,21 @@ function (_Component) {
           next.router.update(r, Component)
         }
       }
-    })(typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__.default : (module.exports.default || module.exports), "/twitter-notes")
+    })(typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__.default : (module.exports.default || module.exports), "/react-canvas/docs")
   
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node_modules/webpack/buildin/harmony-module.js */ "./node_modules/webpack/buildin/harmony-module.js")(module)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node_modules/webpack/buildin/harmony-module.js */ "./node_modules/webpack/buildin/harmony-module.js")(module)))
 
 /***/ }),
 
 /***/ 3:
-/*!**************************************!*\
-  !*** multi ./pages/twitter-notes.js ***!
-  \**************************************/
+/*!******************************************!*\
+  !*** multi ./pages/react-canvas/docs.js ***!
+  \******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__NEXT_REGISTER_PAGE('/twitter-notes', function() {
-module.exports = __webpack_require__(/*! ./pages/twitter-notes.js */"./pages/twitter-notes.js");
+__NEXT_REGISTER_PAGE('/react-canvas/docs', function() {
+module.exports = __webpack_require__(/*! ./pages/react-canvas/docs.js */"./pages/react-canvas/docs.js");
 
 return { page: module.exports.default }});
 
@@ -12341,4 +12602,4 @@ module.exports = dll_5d62d38be3592dca3a42;
 /***/ })
 
 },[[3,"static/runtime/webpack.js","styles"]]]));;
-//# sourceMappingURL=twitter-notes.js.map
+//# sourceMappingURL=docs.js.map
